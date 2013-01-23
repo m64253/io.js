@@ -93,9 +93,7 @@
 			
 			if (isCrossDomain(url)) {
 				if (typeof xhr.withCredentials !== 'undefined') {
-					options.headers = {
-						'Content-Type': 'text/plain'
-					};
+					options.contentType = 'text/plain';
 					//xhr.withCredentials = false;
 					
 				} else if (typeof win.XDomainRequest !== 'undefined') {
@@ -140,9 +138,8 @@
 			
 			
 			// Headers
-			if (options.headers) {
-				setHeaders(xhr, options.headers);
-			}
+			options.headers['Content-Type'] = options.contentType || 'text/plain';
+			setHeaders(xhr, options.headers);
 			
 			
 			// Data

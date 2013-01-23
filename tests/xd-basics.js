@@ -16,9 +16,7 @@ describe('XD - Basics', function () {
 		it('should return contents of test1.txt', function (done) {
 			var expected = ['foo', 'bar', 'baz'].join('\n');
 			IO('get', BASE_URL + '/response/test1.txt', null, {
-				headers: {
-					'Content-Type': 'text/plain'
-				},
+				contentType: 'text/plain',
 				callback: function (err, res, xhr) {
 					if (err) {
 						throw err;
@@ -34,9 +32,7 @@ describe('XD - Basics', function () {
 				"foo": "bar"
 			};
 			IO('get', BASE_URL + '/response/test1.json', null, {
-				headers: {
-					'Content-Type': 'application/json'
-				},
+				contentType: 'application/json',
 				callback: function (err, res, xhr) {
 					if (err) {
 						throw err;
@@ -59,9 +55,7 @@ describe('XD - Basics', function () {
 			};
 			
 			IO('post', BASE_URL + '/', send, {
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded'
-				},
+				contentType: 'application/x-www-form-urlencoded',
 				callback: function (err, res, xhr) {
 					if (err) {
 						throw err;
@@ -78,9 +72,7 @@ describe('XD - Basics', function () {
 			};
 			
 			IO('post', BASE_URL + '/', JSON.stringify(send), {
-				headers: {
-					'Content-Type': 'application/json'
-				},
+				contentType: 'application/json',
 				callback: function (err, res, xhr) {
 					if (err) {
 						throw err;
