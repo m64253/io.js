@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mocha Tests</title>
+	<link rel="stylesheet" href="/node_modules/mocha/mocha.css" />
+</head>
+<body>
+<div id="mocha"></div>
+
+<script src="/node_modules/mocha/mocha.js"></script>
+<script>mocha.setup('bdd')</script>
+<script src="/io.js"></script>
+<script src="/json2.js"></script>
+<script src="/assert.js"></script>
+
+<script src="/tests/basics.js"></script>
+<script src="/tests/errors.js"></script>
+<script src="/tests/abort.js"></script>
+<script src="/tests/xd-basics.js"></script>
+<script src="/tests/xd-errors.js"></script>
+<script src="/tests/xd-abort.js"></script>
+<script>
+	mocha.run();
+</script>
+</body>
+</html>
