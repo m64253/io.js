@@ -120,6 +120,8 @@
 					
 					return xhr;
 				}
+			} else {
+				options.headers['X-Requested-With'] = options.headers['X-Requested-With'] || 'XMLHttpRequest';
 			}
 			
 			// Timeout
